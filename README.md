@@ -18,7 +18,6 @@ git clone https://github.com/yourusername/gemmabench.git
 cd gemmabench
 
 2. Create a virtual environment (optional but recommended):
-```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -64,19 +63,21 @@ Contributions are welcome! Please open an issue or submit a pull request.
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## TODOs:
-- [] Add support for benchmarking local models instead of just Hugging Face models
-- [] Add support for running benchmarks with `lm-evaluation-harness`
-- [] Improve recommendations for backend selection instead of the current approach.
-- [] Add more options for customizing benchmark selection
-- [] Add visualization of benchmark results, and live updates during benchmarking
-- [] Add better error handling and user feedback
-- [] Add feature for comparing multiple models at once
-- [] Add an agent to consider natural language instructions for benchmarking
-
+- [ ] Add support for benchmarking local models (specifying a file path).
+- [ ] Add support for running benchmarks with `lm-evaluation-harness`.
+- [ ] Improve recommendations for backend selection (consider model size, VRAM).
+- [ ] Add more options for customizing benchmark selection (e.g., run multiple tasks).
+- [ ] Introduce a config.yaml for setting defaults.
+- [ ] Implement basic parsing of benchmark framework output files.
+- [ ] Add a feature for comparing results from multiple runs (e.g., console table).
+- [ ] Add better error handling and user feedback (especially for OOM, args, dependencies).
+- [ ] Add basic visualization of results and investigate live updates during benchmarking.
+- [ ] Add a feature for comparing multiple specified models at once.
+- [ ] Add an agent to consider natural language instructions for benchmarking.
+- [ ] Add checks for common dependencies (e.g., bitsandbytes if needed).
+- [ ] Add basic unit/integration tests.
 
 ## Demo:
-## Demo
-
 Here's an example of running `gemmabench` to evaluate the `google/gemma-3-1b-it` model on the `helm|mmlu:anatomy` task using the `accelerate` backend:
 
 ```bash
@@ -153,4 +154,3 @@ Splits: 100%|██████████| 1/1 [00:32<00:00, 32.10s/it]
 
 
 Benchmark finished successfully.
-(venv) (base) root@syeds:~/projects/gemmabench# 
